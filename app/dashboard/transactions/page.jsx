@@ -65,7 +65,7 @@ const Transactions = () => {
                   height={40}
                   className={styles.userImage}
                 />
-                John Doe
+                Jake Doe
               </div>
             </td>
             <td>
