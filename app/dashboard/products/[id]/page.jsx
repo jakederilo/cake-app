@@ -1,12 +1,10 @@
 import React from 'react'
 import styles from "@/app/ui/dashboard/products/singleProduct/singleProduct.module.css";
 import Image from "next/image";
-import { fetchProduct } from '@/app/lib/data';
-import { updateProduct } from '@/app/lib/action';
 
-const SingleProductPage = async ({params}) => {
-  const { id } = params;
-  const product = await fetchProduct(id);
+
+const SingleProductPage = () => {
+ 
 
 
   return (
@@ -15,28 +13,28 @@ const SingleProductPage = async ({params}) => {
         <div className={styles.imgContainer}>
           <Image src="/noproduct.jpg" alt="product" fill />
         </div>
-        {product.title}
+        Chocolate Cake
       </div>
       <div className={styles.formContainer}>
-        <form action={updateProduct} className={styles.form}>
-          <input type="hidden" name="id" value={product.id} />
+        <form action={''} className={styles.form}>
+          <input type="hidden" name="id" value="" />
           <label>Title</label>
-          <input type="text" name="title" placeholder={product.title} />
+          <input type="text" name="title" placeholder="Chocolate" />
           <label>Price</label>
-          <input type="number" name="price" placeholder={product.price} />
+          <input type="number" name="price" placeholder="499" />
           <label>Stock</label>
-          <input type="number" name="stock" placeholder={product.stock} />
+          <input type="number" name="stock" placeholder="45" />
           <label>Color</label>
           <input
             type="text"
             name="color"
-            placeholder={product.color}
+            placeholder="red"
           />
           <label>Layer</label>
           <textarea
             type="text"
             name="size"
-            placeholder={product.layer}
+            placeholder="2"
           />
           <label>Cat</label>
           <select name="cat" id="cat">

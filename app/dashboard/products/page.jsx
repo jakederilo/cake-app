@@ -6,8 +6,8 @@ import styles from '../../ui/dashboard/products/products.module.css'
 import Pagination from '@/app/ui/dashboard/pagination/pagination'
 
 
-const ProductsPage = async () => {
- 
+const ProductsPage = () => {
+
 
 
   return (
@@ -30,42 +30,42 @@ const ProductsPage = async () => {
           </tr>
         </thead>
         <tbody>
-            <tr>
-              <td>
-                <div className={styles.product}>
-                  <Image
-                    src={"/noproduct.jpg"}
-                    alt="product"
-                    width={40}
-                    height={40}
-                    className={styles.productImage}
-                  />
-                  Cake
-                </div>
-              </td>
-              <td>So sweet</td>
-              <td></td>
-              <td>April 2, 2024</td>
-              <td>245</td>
-              <td>
+          <tr>
+            <td>
+              <div className={styles.product}>
+                <Image
+                  src={"/noproduct.jpg"}
+                  alt="product"
+                  width={40}
+                  height={40}
+                  className={styles.productImage}
+                />
+                Chocolate Cake
+              </div>
+            </td>
+            <td>So sweet</td>
+            <td>499</td>
+            <td>April 2, 2024</td>
+            <td>245</td>
+            <td>
                 <div className={styles.buttons}>
-                  <Link href="/dashboard/products">
+                  <Link href="/dashboard/products/test">
                     <button className={`${styles.button} ${styles.view}`}>
                       View
                     </button>
                   </Link>
-                  <form>
+                  <div className={styles.buttons}>
                     <button className={`${styles.button} ${styles.delete}`}>
                       Delete
                     </button>
-                  </form>
+                  </div>
                 </div>
-              </td>                                                  
-            </tr>
+              </td>
+          </tr>
         </tbody>
-      
+
       </table>
-      <Pagination/>
+      <Pagination />
     </div>
   )
 }

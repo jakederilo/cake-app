@@ -47,16 +47,16 @@ const UsersPage = async () => {
               <td>Active</td>
               <td>
                 <div className={styles.buttons}>
-                  <Link href="/dashboard/users">
+                  <Link href="/dashboard/users/test">
                     <button className={`${styles.button} ${styles.view}`}>
                       View
                     </button>
                   </Link>
-                  <form>
+                  <div className={styles.buttons}>
                     <button className={`${styles.button} ${styles.delete}`}>
                       Delete
                     </button>
-                  </form>
+                  </div>
                 </div>
               </td>
             </tr>
