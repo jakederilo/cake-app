@@ -36,33 +36,31 @@ const ProductsPage = async ({searchParams}) => {
           </tr>
         </thead>
         <tbody>
-          {products.map((product)=>(
-            <tr key={product.id}>
+            <tr>
               <td>
                 <div className={styles.product}>
                   <Image
-                    src={product.img || "/noproduct.jpg"}
+                    src={"/noproduct.jpg"}
                     alt="product"
                     width={40}
                     height={40}
                     className={styles.productImage}
                   />
-                  {product.title}
+                  Cake
                 </div>
               </td>
-              <td>{product.desc}</td>
-              <td>{product.price}</td>
-              <td>{product.createdAt?.toString().slice(4,16)}</td>
-              <td>{product.stock}</td>
+              <td>So sweet</td>
+              <td></td>
+              <td>April 2</td>
+              <td>245</td>
               <td>
                 <div className={styles.buttons}>
-                  <Link href={`/dashboard/products/${product.id}`}>
+                  <Link href="/dashboard/products">
                     <button className={`${styles.button} ${styles.view}`}>
                       View
                     </button>
                   </Link>
                   <form action={deleteProduct}>
-                    <input type="hidden" name="id" value={product.id} />
                     <button className={`${styles.button} ${styles.delete}`}>
                       Delete
                     </button>
@@ -70,7 +68,6 @@ const ProductsPage = async ({searchParams}) => {
                 </div>
               </td>                                                  
             </tr>
-            ))}
         </tbody>
       
       </table>
