@@ -5,15 +5,9 @@ import Image from 'next/image'
 import styles from '../../ui/dashboard/products/products.module.css'
 import Pagination from '@/app/ui/dashboard/pagination/pagination'
 
-import { fetchProducts } from '@/app/lib/data'
-import { deleteProduct } from '@/app/lib/action'
 
-
-
-const ProductsPage = async ({searchParams}) => {
-  const q = searchParams?.q || "";
-  const page = searchParams?.page || 1;
-  const {count, products} = await fetchProducts(q,page);
+const ProductsPage = async () => {
+ 
 
 
   return (
@@ -51,7 +45,7 @@ const ProductsPage = async ({searchParams}) => {
               </td>
               <td>So sweet</td>
               <td></td>
-              <td>April 2</td>
+              <td>April 2, 2024</td>
               <td>245</td>
               <td>
                 <div className={styles.buttons}>
@@ -60,7 +54,7 @@ const ProductsPage = async ({searchParams}) => {
                       View
                     </button>
                   </Link>
-                  <form action={deleteProduct}>
+                  <form>
                     <button className={`${styles.button} ${styles.delete}`}>
                       Delete
                     </button>
@@ -71,7 +65,7 @@ const ProductsPage = async ({searchParams}) => {
         </tbody>
       
       </table>
-      <Pagination count={count}/>
+      <Pagination/>
     </div>
   )
 }
